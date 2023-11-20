@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de casa</title>
+    <style>
+        body {   
+            background-color: rgb(39, 39, 39);
+            background-size:auto;
+            background-position: center;
+            background-repeat:inherit;
+            margin: 0;
+            padding: 0;
+        }
+        .titulo{
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .titulo2{
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .btn{
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: aliceblue;
+            border-radius: 5px;
+            border: 3px solid;
+            width: 100%;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            margin: auto;
+            cursor: pointer;
+        }
+        .btn-verde{
+            background-color: rgb(81, 207, 115);
+            border-color: rgb(22, 126, 70);
+        }
+        .btn-verde:hover{
+            background-color: rgb(132, 255, 160);
+        }
+        .btn-magenta{
+            background-color: rgb(207, 81, 148);
+            border-color: rgb(126, 22, 76);
+        }
+        .btn-magenta:hover{
+            background-color: rgb(255, 132, 218);
+        }
+        .btn-azul{
+            background-color: rgb(92, 182, 247);
+            border-color: rgb(22, 64, 126);
+        }
+        .btn-azul:hover{
+            background-color: rgb(181, 215, 255);
+        }
+        .btn-amarillo{
+            background-color: rgb(213, 247, 92);
+            border-color: rgb(119, 126, 22);
+        }
+        .btn-amarillo:hover{
+            background-color: rgb(235, 255, 181);
+        }
+        div{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        p{
+            width: 250px;
+        }
+        span{
+            font-size: 250px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="titulo">Casa Domótica</h1>
+    <div>
+        <span>🏡</span>
+    </div>
+    <div id="status-container">
+    </div>
+    <div>
+        <p><button class="btn btn-verde" onclick="mostrarEstado('Sistema activado')">ACTIVAR</button></p>
+    </div>
+    <div>
+        <p><button class="btn btn-magenta" onclick="mostrarEstado('Sistema desactivado')">DESACTIVAR</button></p>
+    </div>
+    <h1 class="titulo">Tendederos</h1>
+    <div>
+        <p><a href="/tOn\"><button class="btn btn-azul">ACTIVAR</button></a></p>
+    </div>
+    <div>
+        <p><a href="/tOff\"><button class="btn btn-magenta">DESACTIVAR</button></a></p>
+    </div>
+    <h1 class="titulo">Lavadora</h1>
+    <div>
+        <p><a href="/lOn\"><button class="btn btn-amarillo">ACTIVAR</button></a></p>
+    </div>
+    <div>
+        <p><a href="/lOff\"><button class="btn btn-magenta">DESACTIVAR</button></a></p>
+    </div>
+    <script>
+        function mostrarEstado(estado) {
+            var statusContainer = document.getElementById('status-container');
+            statusContainer.innerHTML = "<p class=\"titulo2\">" + estado + "</p>";
+        }
+    </script>
+</body>
+</html>
